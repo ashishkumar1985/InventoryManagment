@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 /**
- * This class provides implementation of all service methods and
+ * This class provides implementation/business logic for all service methods and
  * serves as service class.
  * @author Ashish Kumar
  *
@@ -20,6 +20,7 @@ public class InventoryService implements InventoryServiceInterface{
  /**
   * This class is responsible for creating an inventory item.
   * Accepts item name , cost price and selling price.
+  * in case of any error it returns the RC=1.
   */
     public int createItemName(String itemName, double costPrice,
                   double sellingPrice) {
@@ -68,6 +69,8 @@ public class InventoryService implements InventoryServiceInterface{
 
 /**
  * This method is responsible for update for selling.
+ * it accepts the item name and quantity to update the buy records.
+ * in case of any error it returns the RC=1.
  */
     public int updateBuy(String itemName, int quantity) {
            
@@ -86,8 +89,9 @@ public class InventoryService implements InventoryServiceInterface{
     }
 
  /**
-  * This method is responsible for updating the cell item.
-  * Accepts item name and selling quantity
+  * This method is responsible for updating the sell item.
+  * Accepts item name and selling quantity.
+  * in case of any error it returns the RC=1.
   */
     public int updateSellItem(String itemName, int quantity) {
            try {
